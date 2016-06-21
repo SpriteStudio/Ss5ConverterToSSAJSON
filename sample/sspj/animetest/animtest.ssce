@@ -363,8 +363,8 @@
 		</cell>
 		<cell>
 			<name>light1</name>
-			<pos>641 516</pos>
-			<size>223 108</size>
+			<pos>642 525</pos>
+			<size>222 91</size>
 			<pivot>-0.455357134342194 0</pivot>
 			<rotated>0</rotated>
 			<orgImageName></orgImageName>
@@ -372,8 +372,8 @@
 		</cell>
 		<cell>
 			<name>light2</name>
-			<pos>640 624</pos>
-			<size>248 48</size>
+			<pos>642 621</pos>
+			<size>243 52</size>
 			<pivot>-0.405241936445236 0.020833333954215</pivot>
 			<rotated>0</rotated>
 			<orgImageName></orgImageName>
@@ -381,8 +381,8 @@
 		</cell>
 		<cell>
 			<name>light3</name>
-			<pos>804 684</pos>
-			<size>64 68</size>
+			<pos>805 684</pos>
+			<size>63 68</size>
 			<pivot>0 0</pivot>
 			<rotated>0</rotated>
 			<orgImageName></orgImageName>
@@ -390,8 +390,8 @@
 		</cell>
 		<cell>
 			<name>light4</name>
-			<pos>736 684</pos>
-			<size>72 80</size>
+			<pos>729 684</pos>
+			<size>76 80</size>
 			<pivot>0 0</pivot>
 			<rotated>0</rotated>
 			<orgImageName></orgImageName>
@@ -399,8 +399,8 @@
 		</cell>
 		<cell>
 			<name>light5</name>
-			<pos>868 680</pos>
-			<size>28 28</size>
+			<pos>868 681</pos>
+			<size>28 27</size>
 			<pivot>0 0</pivot>
 			<rotated>0</rotated>
 			<orgImageName></orgImageName>
@@ -408,8 +408,8 @@
 		</cell>
 		<cell>
 			<name>light6</name>
-			<pos>868 708</pos>
-			<size>32 32</size>
+			<pos>868 711</pos>
+			<size>30 30</size>
 			<pivot>0 0</pivot>
 			<rotated>0</rotated>
 			<orgImageName></orgImageName>
@@ -417,7 +417,7 @@
 		</cell>
 		<cell>
 			<name>light7</name>
-			<pos>868 744</pos>
+			<pos>868 743</pos>
 			<size>28 28</size>
 			<pivot>0 0</pivot>
 			<rotated>0</rotated>
