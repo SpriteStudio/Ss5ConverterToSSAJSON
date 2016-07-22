@@ -4,10 +4,10 @@
 "name":"all_all",
 "animation": {
 "fps": 60,
-"CanvasWidth": 360,
-"CanvasHeight": 640,
-"MarginWidth": 180,
-"MarginHeight": 320,
+"CanvasWidth": 640,
+"CanvasHeight": 360,
+"MarginWidth": 320,
+"MarginHeight": 180,
 "parts": ["instance","effect","root","BG","dance001:dance01","dance002:dance02","dance002:dance02_1","tkeffect03:light3","tkeffect03:light3_1","tkeffect03:light3_1_1","tkeffect03:light3_1_1_1","tkeffect01:light1","tkeffect01:light1_1","tkeffect01:light1_1_1","tkeffect01:light1_2","tkeffect02:light2","tkeffect02:light2_1","tkeffect02:light2_1_1","tkeffect02:light2_1_1_1","tkeffect02:light2_1_1_1_1","tkeffect06:light6_2","tkeffect06:light6_3","tkeffect04:light4_1","tkeffect04:light4_2","tkeffect04:light4_3","tkeffect04:light4_4","effect_1","effect_2","mask"],
 "ssa": [
 [
@@ -36411,10 +36411,10 @@
 "name":"effect01_light1",
 "animation": {
 "fps": 30,
-"CanvasWidth": 512,
-"CanvasHeight": 256,
-"MarginWidth": 256,
-"MarginHeight": 256,
+"CanvasWidth": 256,
+"CanvasHeight": 512,
+"MarginWidth": 128,
+"MarginHeight": 512,
 "parts": ["instance","effect","root","spotlight1","light1","light3"],
 "ssa": [
 [
@@ -36726,10 +36726,10 @@
 "name":"effect02_light2",
 "animation": {
 "fps": 30,
-"CanvasWidth": 512,
-"CanvasHeight": 256,
-"MarginWidth": 256,
-"MarginHeight": 256,
+"CanvasWidth": 256,
+"CanvasHeight": 512,
+"MarginWidth": 128,
+"MarginHeight": 512,
 "parts": ["instance","effect","root","spotlight2","light1_1","light3_1"],
 "ssa": [
 [
@@ -36891,9 +36891,9 @@
 "name":"effect03_light3",
 "animation": {
 "fps": 30,
-"CanvasWidth": 512,
-"CanvasHeight": 256,
-"MarginWidth": 256,
+"CanvasWidth": 256,
+"CanvasHeight": 512,
+"MarginWidth": 128,
 "MarginHeight": 0,
 "parts": ["instance","effect","root","light2"],
 "ssa": [
