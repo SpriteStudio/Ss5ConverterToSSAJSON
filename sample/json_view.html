@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
 	<script type="text/javascript" src="./SsaPlayer.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 	
 	<script type="text/javascript">
 		var screen_width = 0;
@@ -20,11 +20,11 @@
 			data_index = data_index - 1;
 			if ( data_index < 0 ) data_index = 0;
 
-            var imageList = new SsImageList(data[data_index].images, "./datas/", true);
-            var animation = new SsAnimation(data[data_index].animation, imageList);		
+			var imageList = new SsImageList(data[data_index].images, "./datas/", true);
+			var animation = new SsAnimation(data[data_index].animation, imageList);		
 			sprite = new SsSprite(animation);
-            sprite.x = spr_x + screen_width/2;
-            sprite.y = spr_y + screen_height/2;
+			sprite.x = spr_x + screen_width/2;
+			sprite.y = spr_y + screen_height/2;
 		}
 		
 		function  OnButtonClick2()
@@ -33,11 +33,11 @@
 			
 			if ( data_index > data.length ) data_index = data.length;
 			
-            var imageList = new SsImageList(data[data_index].images, "./datas/", true);
-            var animation = new SsAnimation(data[data_index].animation, imageList);		
+			var imageList = new SsImageList(data[data_index].images, "./datas/", true);
+			var animation = new SsAnimation(data[data_index].animation, imageList);		
 			sprite = new SsSprite(animation);
-            sprite.x = spr_x + screen_width/2;
-            sprite.y = spr_y + screen_height/2;
+			sprite.x = spr_x + screen_width/2;
+			sprite.y = spr_y + screen_height/2;
 		}
 		
 		function  OnButtonClick3()
@@ -49,42 +49,45 @@
 			sprite.y = spr_y + 300;
 		}
 
-	    $(document).ready(function () {
-	        document.getElementById("dScreen1").innerHTML = "STEP 1";
+		$(document).ready(function () {
+			document.getElementById("dScreen1").innerHTML = "STEP 1";
 
-//            $.get("./Samples/girl/girl.json", function(jsonData){
-	        $.getJSON('./datas/animetest.json', function (jsonData) {
+			$.getJSON('./datas/animetest.json', function (jsonData) {
 
-                document.getElementById("dScreen1").innerHTML = "STEP 2";
+				document.getElementById("dScreen1").innerHTML = "STEP 2";
 
-//                var data = $.parseJSON(jsonData);
-                data = jsonData;
+	//		var data = $.parseJSON(jsonData);
+				data = jsonData;
 
-	            var a_canvas = document.getElementById("a_canvas");
-	            var ctx = a_canvas.getContext("2d");
+				var a_canvas = document.getElementById("a_canvas");
+				var ctx = a_canvas.getContext("2d");
 
 				data_index = 0;
 
-	            var imageList = new SsImageList(data[data_index].images, "./datas/", true);
-	            var animation = new SsAnimation(data[data_index].animation, imageList);
+				var imageList = new SsImageList(data[data_index].images, "./datas/", true);
+				var animation = new SsAnimation(data[data_index].animation, imageList);
 				screen_width = 1280;
 				screen_height = 720;
 
-	            var sp1 = new SsSprite(animation);
-	            sp1.x = spr_x + screen_width/2;
-	            sp1.y = spr_y + screen_height/2;
-//              sp1.setStep(0.1);
+				var sp1 = new SsSprite(animation);
+				//位置の設定
+				sp1.x = spr_x + screen_width/2;
+				sp1.y = spr_y + screen_height/2;
+				//全体のスケールを設定
+				sp1.rootScaleX = 1.0;
+				sp1.rootScaleY = 1.0;
+				//アニメーションの再生速度を設定
+	//		sp1.setStep(2.0);
 
 				sprite = sp1;
 
-	            setInterval(function () {
-	            	var t = new Date().getTime();
+				setInterval(function () {
+					var t = new Date().getTime();
 
-	            	ctx.save();
+					ctx.save();
 
-//	            	ctx.clearRect(-(w/2), -(h/2), (w) * 2, (h) * 2);
-	            	ctx.clearRect(0, 0, (screen_width) , (screen_height) );
-	            	sprite.draw(ctx, t);
+					ctx.clearRect(0, 0, (screen_width) , (screen_height) );
+					sprite.draw(ctx, t);
 					ctx.restore();
 
 					//基準枠線の描画（テスト用）
@@ -102,7 +105,7 @@
 					ctx.moveTo( 0 , screen_height/2 );
 					ctx.lineTo( screen_width,  screen_height/2);
 					ctx.stroke();
-					
+						
 					//再生フレーム、再生中のアニメ名称、ループカウントの表示
 					
 					document.getElementById("dScreen2").innerHTML= "[" + data_index + "]" + data[data_index].name + "<br>" + sprite.getFrameNo() + "<br>loop count = " + sprite.getLoopCount();
@@ -110,14 +113,14 @@
 					document.getElementById("dScreen2").innerHTML+= "<br>x = " + (sprite.x - w/2);
 					document.getElementById("dScreen2").innerHTML+= "<br>y = " + (sprite.y - h/2);
 
-//	            	var state = sp1.getPartState("a");
-//	            	document.getElementById("dScreen4").innerHTML = state.x;
+	//			var state = sp1.getPartState("a");
+	//			document.getElementById("dScreen4").innerHTML = state.x;
 
-	            }, 30);
+				}, 30);
 
-	        });
+			});
 
-	    });
+		});
 
 	</script>
 </head>

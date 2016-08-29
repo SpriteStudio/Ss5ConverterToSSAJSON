@@ -1,3 +1,14 @@
+//-----------------------------------------------------------
+// Ss5ConverterToSSAJSON v1.0.3
+//
+// Copyright(C) Web Technology Corp.
+// http://www.webtech.co.jp/
+//
+// Ss5ConverterToSSAJSON
+// https://github.com/SpriteStudio/Ss5ConverterToSSAJSON/wiki
+// から出力したJSONファイルをHTML5で再生するサンプルプログラムです。
+//
+//-----------------------------------------------------------
 
 ////////////////////////////////////////////////////////////
 // SsImageList
@@ -120,7 +131,7 @@ SsAnimation.prototype.getPartsMap = function () {
 
 // 描画メソッド
 // Draw method.
-SsAnimation.prototype.drawFunc = function (ctx, frameNo, x, y, flipH, flipV, partStates, scale) {
+SsAnimation.prototype.drawFunc = function (ctx, frameNo, x, y, flipH, flipV, partStates, rootScaleX, rootScaleY) {
 
 	var iPartNo = 0;
 	var iImageNo = 1;
@@ -159,8 +170,8 @@ SsAnimation.prototype.drawFunc = function (ctx, frameNo, x, y, flipH, flipV, par
 		var sy = partData[iSouY];
 		var sw = partData[iSouW];
 		var sh = partData[iSouH];
-		var dx = partData[iDstX];
-		var dy = partData[iDstY];
+		var dx = partData[iDstX] * rootScaleX;
+		var dy = partData[iDstY] * rootScaleY;
 
 		var vdw = sw;
 		var vdh = sh;
@@ -184,7 +195,7 @@ SsAnimation.prototype.drawFunc = function (ctx, frameNo, x, y, flipH, flipV, par
 			ctx.globalCompositeOperation = blendOperations[blend];
 			ctx.globalAlpha = alpha;
 			//ctx.setTransform(1, 0, 0, 1, dx, dy); 		// 最終的な表示位置へ. To display the final position.
-			ctx.setTransform(1 * scale, 0, 0, 1 * scale, dx * scale, dy * scale); 	// 最終的な表示位置へ. To display the final position.
+			ctx.setTransform(1 * rootScaleX, 0, 0, 1 * rootScaleY, dx, dy); 	// 最終的な表示位置へ. To display the final position.
 			ctx.rotate(-dang);
 			ctx.scale(scaleX, scaleY);
 			ctx.translate(-ox + vdw / 2, -oy + vdh / 2); 	// パーツの原点へ. To the origin of the parts.
@@ -259,7 +270,8 @@ SsSprite.prototype.flipH = false;
 SsSprite.prototype.flipV = false;
 
 // scale
-SsSprite.prototype.scale = 1.0;
+SsSprite.prototype.rootScaleX = 1.0;
+SsSprite.prototype.rootScaleY = 1.0;
 
 // アニメーションの設定
 // Set animation.
@@ -416,6 +428,6 @@ SsSprite.prototype.draw = function (ctx, currentTime) {
 
 	this.inner.prevDrawnTime = currentTime;
 
-	this.inner.animation.drawFunc(ctx, this.getFrameNo(), this.x, this.y, this.flipH, this.flipV, this.inner.partStates, this.scale);
+	this.inner.animation.drawFunc(ctx, this.getFrameNo(), this.x, this.y, this.flipH, this.flipV, this.inner.partStates, this.rootScaleX, this.rootScaleY);
 }
 
